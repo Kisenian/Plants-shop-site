@@ -1,0 +1,62 @@
+<!-- каталог.html -->
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог цветов</title>
+    <link rel="stylesheet" href="catalog_css.css">
+    <link rel="stylesheet" href="catalog-mobile.css">
+    <link rel="stylesheet" href="burger.css">
+    <link rel="stylesheet" href="burger_mobile.css">
+</head>
+
+<body>
+    <!-- Для index.html и cart.html -->
+    <div class="burger-menu">
+        <button class="burger-btn" id="burger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="burger-overlay" id="burger-overlay"></div>
+
+        <nav class="burger-nav" id="burger-nav">
+            <button class="burger-close" id="burger-close"></button>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="cart.html">Корзина</a></li>
+                <li><a href="index.html #about-section" class="menu-about">О нас</a></li>
+                <li><a href="index.html #main-footer" class="menu-contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script src="burger.js"></script>
+
+    <div id="main">
+        <div class="page-title-wrapper">
+            <h1 class="page-title">Каталог</h1>
+        </div>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+        </svg>
+        </a>
+
+        <div id="catalog">
+            <button class="arrow" id="prev">&lt;&lt;</button>
+            <div id="cards"></div>
+            <button class="arrow" id="next">&gt;&gt;</button>
+        </div>
+    </div>
+    <a id="cart-btn" href="cart.html">
+        <span id="cart-count">0</span>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="11" stroke="#56543C" stroke-width="2" />
+            <path d="M8 11H16L15 17H9L8 11Z" stroke="#56543C" stroke-width="2" />
+        </svg>
+    </a>
+    <script src="main.js"></script>
+</body>
+
+</html>

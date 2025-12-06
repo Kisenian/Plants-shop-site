@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" href="burger.css">
+    <link rel="stylesheet" href="burger_mobile.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index_mobile.css">
+
+</head>
+
+<body>
+    <!-- Шапка -->
+    <header class="main-header">
+        <div class="logo">LEAFIE</div>
+
+        <nav class="main-nav">
+            <a href="#top">Главная</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="delivery.html">Доставка</a>
+            <a href="#about-section">О нас</a>
+            <a href="#main-footer">Контакты</a>
+        </nav>
+
+        <a href="login.html" class="user-avatar" title="Войти или зарегистрироваться">
+            <img src="user.png" alt="Личный кабинет" />
+        </a>
+
+        <div class="burger-menu">
+            <button class="burger-btn" id="burger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="burger-overlay" id="burger-overlay"></div>
+            <nav class="burger-nav" id="burger-nav">
+                <button class="burger-close" id="burger-close"></button>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="cart.html">Корзина</a></li>
+                    <li><a href="delivery.html" class="current">Доставка</a></li>
+                    <li><a href="#" class="menu-about">О нас</a></li>
+                    <li><a href="#" class="menu-contacts">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+    </header>
+
+
+    <!-- Главный баннер -->
+    <section class="main-banner" id="top">
+        <div class="banner-content">
+            <h1>Остался лишь один шаг до<br>сада вашей мечты.</h1>
+            <a href="#catalog-section" class="glass-btn">К магазину</a>
+        </div>
+        <div class="banner-plant">
+            <img src="https://i.imgur.com/4r1c74z.png" alt="plant" />
+            <!-- используй свою картинку растения или подставь свою -->
+        </div>
+    </section>
+
+    <section id="about-section" class="about-centered">
+        <h2>О нас</h2>
+        <p>Leafie — мы с любовью поставляем растения уже 3 года и помогли создать зеленый уют более чем в 30 000 домах
+            по
+            всей России. Мы работаем напрямую с проверенными питомниками, тщательно заботимся о каждой детали и всегда
+            рады
+            помочь вам выбрать своё идеальное растение!</p>
+        <div class="stats-cards">
+            <div class="glass-card">
+                <div class="card-title">3 года на рынке</div>
+                <div class="card-desc">Опыт и доверие клиентов</div>
+            </div>
+            <div class="glass-card">
+                <div class="card-title">30 000+ заказов</div>
+                <div class="card-desc">Тысячи довольных покупателей</div>
+            </div>
+            <div class="glass-card">
+                <div class="card-title">Быстрая доставка</div>
+                <div class="card-desc">По всей России и СНГ</div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Футер -->
+    <footer class="main-footer">
+        <div class="footer-contacts">
+            <div><strong>Телефон:</strong> <a href="tel:+79000000000">+7 900 XXX XX XX</a></div>
+            <div><strong>Email:</strong> <a href="mailto:leafie@buy.ru">leafie@buy.ru</a></div>
+            <div><strong>Мы в соцсетях:</strong>
+                <a href="#" title="ВКонтакте">VK</a> ·
+                <a href="#" title="Телеграм">TG</a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © Leafie, 2024. Все права защищены.
+        </div>
+    </footer>
+    <script src="burger.js"></script>
+</body>

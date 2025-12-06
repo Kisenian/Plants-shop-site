@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Доставка</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="burger.css">
+    <link rel="stylesheet" href="delivery.css">
+    <link rel="stylesheet" href="burger_monile.css">
+    <link rel="stylesheet" href="delivery_mobile.css">
+</head>
+
+<body>
+    <div id="delivery-page">
+        <!-- Бургер меню -->
+        <div class="burger-menu">
+            <button class="burger-btn" id="burger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="burger-overlay" id="burger-overlay"></div>
+            <nav class="burger-nav" id="burger-nav">
+                <button class="burger-close" id="burger-close"></button>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="cart.html">Корзина</a></li>
+                    <li><a href="index.html #about-section" class="menu-about">О нас</a></li>
+                    <li><a href="index.html#main-footer" class="menu-contacts">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <h1 class="delivery-title">Выбор доставки</h1>
+
+        <div class="delivery-layout">
+            <!-- Левое окошко с картой -->
+            <div class="delivery-map-block">
+                <h2>Карта доставки</h2>
+
+                <div class="map-scheme">
+                    <div class="map-center" title="Наш магазин: ул. Тверская, д. 10">
+                        <div class="pulse-ring"></div>
+                        <div class="marker-icon">🏪</div>
+                    </div>
+
+                    <!-- Точки доставки -->
+                    <div class="delivery-point" style="top: 30%; left: 40%;" data-id="1">
+                        <div class="point-marker">📍</div>
+                        <div class="point-tooltip">ул. Тверская, д. 10<br>250 ₽ • 1.5 ч</div>
+                    </div>
+
+                    <div class="delivery-point" style="top: 50%; left: 60%;" data-id="2">
+                        <div class="point-marker">📍</div>
+                        <div class="point-tooltip">ул. Арбат, д. 25<br>300 ₽ • 2 ч</div>
+                    </div>
+
+                    <div class="delivery-point" style="top: 70%; left: 35%;" data-id="3">
+                        <div class="point-marker">📍</div>
+                        <div class="point-tooltip">пр. Мира, д. 15<br>350 ₽ • 2.5 ч</div>
+                    </div>
+
+                    <div class="delivery-point" style="top: 40%; left: 70%;" data-id="4">
+                        <div class="point-marker">📍</div>
+                        <div class="point-tooltip">ул. Новый Арбат, д. 30<br>300 ₽ • 2 ч</div>
+                    </div>
+
+                    <div class="delivery-point" style="top: 80%; left: 55%;" data-id="5">
+                        <div class="point-marker">📍</div>
+                        <div class="point-tooltip">Ленинский проспект, д. 45<br>400 ₽ • 3 ч</div>
+                    </div>
+
+                    <div class="delivery-zone"></div>
+                </div>
+
+                <div class="map-info">
+                    <p>📍 <strong>Наш магазин:</strong> ул. Тверская, д. 10</p>
+                    <p>🚗 <strong>Бесплатная доставка</strong> от 3000 ₽</p>
+                    <p>⏰ <strong>Время доставки:</strong> 2-4 часа</p>
+                    <p>🗺️ <strong>Зона доставки:</strong> в пределах 3 км от магазина</p>
+                </div>
+            </div>
+
+            <!-- Правое окошко с выбором адреса -->
+            <div class="delivery-address-block">
+                <h2>Выбор адреса</h2>
+                <div class="address-form">
+                    <div class="form-group">
+                        <label for="address-select">Выберите адрес доставки:</label>
+                        <select id="address-select" class="form-select">
+                            <option value="" class="form-select-from">-- Выберите адрес --</option>
+                            <option value="1" class="form-select-from">ул. Тверская, д. 10</option>
+                            <option value="2" class="form-select-from">ул. Арбат, д. 25</option>
+                            <option value="3" class="form-select-from">пр. Мира, д. 15</option>
+                            <option value="4" class="form-select-from">ул. Новый Арбат, д. 30</option>
+                            <option value="5" class="form-select-from">Ленинский проспект, д. 45</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="street">Или введите адрес:</label>
+                        <input type="text" id="street" placeholder="Улица, дом, квартира" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apartment">Квартира/Офис:</label>
+                        <input type="text" id="apartment" placeholder="Номер" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="delivery-time">Время доставки:</label>
+                        <select id="delivery-time" class="form-select">
+                            <option value="asap">Как можно скорее</option>
+                            <option value="10-12">10:00 - 12:00</option>
+                            <option value="12-14">12:00 - 14:00</option>
+                            <option value="14-16">14:00 - 16:00</option>
+                            <option value="16-18">16:00 - 18:00</option>
+                            <option value="18-20">18:00 - 20:00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comment">Комментарий для курьера:</label>
+                        <textarea id="comment" placeholder="Например: позвонить за 10 минут" class="form-textarea"
+                            rows="3"></textarea>
+                    </div>
+
+                    <div class="delivery-summary">
+                        <div class="summary-item">
+                            <span>Стоимость доставки:</span>
+                            <span id="delivery-cost">300 ₽</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Примерное время:</span>
+                            <span id="delivery-eta">2 часа</span>
+                        </div>
+                    </div>
+
+                    <button id="confirm-delivery" class="delivery-btn">Подтвердить доставку</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Иконка корзины внизу -->
+        <a id="cart-btn" href="cart.html">
+            <span id="cart-count">0</span>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="11" stroke="#56543C" stroke-width="2" />
+                <path d="M8 11H16L15 17H9L8 11Z" stroke="#56543C" stroke-width="2" />
+            </svg>
+        </a>
+    </div>
+
+    <script src="burger.js"></script>
+    <script src="delivery.js"></script>
+</body>
+
+</html>

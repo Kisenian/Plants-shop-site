@@ -1,0 +1,158 @@
+/* Бургер-меню */
+.burger-menu {
+    position: relative;
+    z-index: 1000;
+}
+
+/* Кнопка бургера (три полоски) */
+.burger-btn {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 54px;
+    height: 54px;
+    background: #56543C;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 8px;
+    z-index: 1001;
+    transition: background .3s;
+}
+
+.burger-btn:hover {
+    background: #656044;
+}
+
+.burger-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #e8dbc8;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Анимация в крестик при открытии */
+.burger-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Затемнение фона */
+.burger-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility .3s;
+    z-index: 998;
+}
+
+.burger-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Меню (1/3 экрана справа) */
+.burger-nav {
+    position: fixed;
+    top: 0;
+    right: -33.333%;
+    /* Скрыто за экраном */
+    width: 33.333%;
+    /* 1/3 экрана */
+    max-width: 400px;
+    height: 100%;
+    background: #e8dbc8;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 30px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.burger-nav.active {
+    right: 0;
+}
+
+/* Кнопка закрытия в меню */
+.burger-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: #56543C;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color .3s;
+}
+
+.burger-close:hover {
+    color: #656044;
+}
+
+/* Список меню */
+.burger-nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 60px;
+}
+
+.burger-nav li {
+    margin-bottom: 25px;
+}
+
+.burger-nav a {
+    color: #56543C;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: normal;
+    padding: 10px 0;
+    display: block;
+    border-bottom: 1px solid transparent;
+    transition: all .3s;
+}
+
+.burger-nav a:hover {
+    color: #50604f;
+    border-bottom: 1px solid #50604f;
+    padding-left: 10px;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+    .burger-nav {
+        width: 85%;
+        /* На мобильных почти весь экран */
+        right: -85%;
+    }
+
+    .burger-btn {
+        top: 20px;
+        right: 20px;
+    }
+}

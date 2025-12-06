@@ -1,0 +1,571 @@
+body {
+    background: #e8dbc8;
+    color: #56543C;
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #e8dbc8;
+    border-radius: 10px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-title-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 34px;
+    /* или 30px, как нравится */
+}
+
+.page-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: #56543C;
+    font-family: 'Georgia', serif;
+    margin: 0;
+}
+
+/* h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    flex-grow: 1;
+    margin: 0;
+} */
+
+#cart-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 64px;
+    height: 64px;
+    /* ... */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow: visible;
+    /* НЕ нужно position: relative для фиксации! */
+}
+
+#cart-btn svg {
+    width: 48px;
+    /* SVG крупнее, но чуть меньше контейнера */
+    height: 48px;
+}
+
+#cart-count {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: #50604f;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    min-width: 26px;
+    min-height: 26px;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    pointer-events: none;
+}
+
+#catalog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60px 0 20px 0;
+    gap: 20px;
+}
+
+.arrow {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #56543C;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    opacity: 1;
+}
+
+.arrow:disabled {
+    opacity: 0.2;
+    cursor: default;
+}
+
+#cards {
+    display: flex;
+    gap: 36px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 240px;
+    background: #a7a884;
+    border-radius: 16px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, .03);
+    margin-bottom: 24px;
+    /* для отступа названия */
+}
+
+.card img {
+    max-width: 85%;
+    max-height: 180px;
+    margin-bottom: 10px;
+    margin-top: 24px;
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    margin: 0;
+    text-align: left;
+    align-self: flex-start;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-top: 12px;
+    position: relative;
+    background: none;
+    border: none;
+    box-shadow: none;
+    height: 0;
+    /* чтобы не растягивать */
+    z-index: 1;
+}
+
+.card-footer h2 {
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0 0 0 10px;
+    flex: 1;
+    color: #56543C;
+    align-self: flex-end;
+    background: none;
+}
+
+.btn-add {
+    position: absolute;
+    right: -20px;
+    /* сдвигаем за границу */
+    bottom: -20px;
+    /* сдвигаем за границу */
+    background: #56543C;
+    color: #fff;
+    border: 4px solid #e8dbc8;
+    /* цвет фона страницы для выделения */
+    border-radius: 16px;
+    padding: 10px 24px;
+    font-size: 1.02rem;
+    z-index: 2;
+    transition: box-shadow .2s, background .2s;
+}
+
+.btn-add.flash {
+    background: #ffd700;
+    color: #333;
+    box-shadow: 0 0 12px #ffd700;
+}
+
+
+#cart-block {
+    position: fixed;
+    top: 30px;
+    right: 80px;
+    background: #e8dbc8;
+    border-radius: 16px;
+    padding: 30px 38px 38px 38px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    min-width: 420px;
+    min-height: 340px;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-close {
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.cart-list {
+    margin: 22px 0;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    /* Скругление для таблицы */
+    overflow: hidden;
+    /* Чтобы углы были скругленные */
+}
+
+.cart-table-block {
+    flex: 1 1 0%;
+    min-width: 465px;
+    border: 2px solid #56543C;
+    border-radius: 12px;
+    padding: 24px 20px;
+    overflow: hidden;
+    margin-left: 10%;
+    /* Важно! чтобы содержимое соблюдало скругления */
+}
+
+
+.cart-table thead tr {
+    border-bottom: 2px solid #56543C;
+}
+
+.cart-table th {
+    text-align: left;
+    padding: 12px 8px;
+    border-bottom: none;
+    font-weight: bold;
+}
+
+.cart-table td {
+    padding: 2px 8px;
+}
+
+.cart-table thead tr {
+    border-bottom: 1.5px solid #56543C;
+}
+
+.cart-table th {
+    text-align: left;
+    padding: 12px 8px;
+    border-bottom: none;
+    font-weight: bold;
+}
+
+.cart-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    border-bottom: 1.5px solid #1e1515;
+    padding-bottom: 11px;
+}
+
+.cart-thumb img {
+    width: 100px;
+    height: 100px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
+.cart-name {
+    flex: 1;
+}
+
+.cart-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cart-controls button {
+    border: 1px solid #56543C;
+    background: #e8dbc8;
+    color: #56543C;
+    border-radius: 7px;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.cart-trash {
+    background: none;
+    border: none;
+    font-size: 1.24rem;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.cart-summary {
+    border-top: 1px solid #b1ad9b;
+    padding-top: 18px;
+}
+
+.cart-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 36px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.cart-left {
+    flex: 1 1 0%;
+    min-width: 350px;
+}
+
+.cart-summary-block {
+    flex: 0 0 350px;
+    min-width: 300px;
+    margin-right: 10%;
+    /* ... твои стили ... */
+}
+
+.cart-left,
+.cart-summary-block {
+    border: 2px solid #56543C;
+    border-radius: 12px;
+    /* можно добавить padding для эффекта */
+    padding: 24px 20px;
+}
+
+input[type="text"] {
+    border: 1px solid #56543C;
+    background: #e8dbc8;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 1rem;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.cart-pay-btn {
+    display: block;
+    margin-top: 16px;
+    width: 100%;
+    padding: 11px 0;
+    border: none;
+    border-radius: 10px;
+    background: #656044;
+    color: #fff;
+    font-size: 1.16rem;
+    font-family: inherit;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity .2s;
+}
+
+.cart-pay-btn.active {
+    opacity: 1;
+}
+
+.back-to-catalog-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: #56543C;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    /* gap: 8px; */
+    transition: background .2s, transform .2s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    margin-right: 6%;
+}
+
+.back-to-catalog-btn:hover {
+    background: #656044;
+    transform: translateY(-2px);
+}
+
+
+.qty-box {
+    display: flex;
+    align-items: center;
+    background: #656044;
+    border-radius: 12px;
+    box-shadow: 0 1px 5px rgba(80, 96, 79, 0.06);
+    padding: 4px 8px;
+    gap: 7px;
+    /* чтобы + и – не сливались с цифрой */
+    min-width: 40px;
+    /* универсальная ширина для красоты — подгони под себя */
+    justify-content: center;
+    max-width: 80px;
+}
+
+.qty-value {
+    min-width: 18px;
+    max-width: 18px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #ceccb3;
+    background: none;
+    border: none;
+    pointer-events: none;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.qty-btn {
+    border: none;
+    background: #656044;
+    color: #fff;
+    border-radius: 9px;
+    /* Можно 50% — будет круглая */
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(80, 96, 79, 0.07);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    outline: none;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+    user-select: none;
+    /* Если хочешь круглую (милавку), поменяй border-radius: 50%; */
+}
+
+.qty-btn:active {
+    background: #56543C;
+    transform: scale(0.97);
+}
+
+.qty-btn:hover {
+    background: #50604f;
+}
+
+
+.del-btn {
+    background: #a94343;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    color: #fff;
+    font-size: 1.2rem;
+    margin-left: 6px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.1s;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(169, 67, 67, 0.10);
+}
+
+.del-btn:hover {
+    background: #bc2c2c;
+}
+
+
+
+.custom-checkbox {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    gap: 8px;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.custom-checkbox span {
+    width: 15px;
+    height: 12px;
+    background: #fff;
+    border: 2px solid #56543C;
+    border-radius: 8px;
+    display: inline-block;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
+}
+
+.custom-checkbox input[type="checkbox"]:checked+span {
+    background: #50604f;
+    border-color: #50604f;
+}
+
+
+
+.cart-pay-btn {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #50604f 0%, #8fb873 100%);
+    color: #fff;
+    font-size: 1.22rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    opacity: 0.6;
+    box-shadow: 0 2px 12px rgba(80, 96, 79, 0.07);
+    letter-spacing: 0.05em;
+    margin-top: 18px;
+    transition: opacity .2s, box-shadow .2s, background .2s;
+}
+
+.cart-pay-btn:not(:disabled):hover {
+    opacity: 1;
+    background: linear-gradient(90deg, #404c3a 0%, #7fa85b 100%);
+    box-shadow: 0 4px 18px rgba(80, 96, 79, 0.16);
+}
+
+.cart-pay-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+.cart-table th:nth-child(2),
+.cart-table td:nth-child(2) {
+    min-width: 120px;
+}
+
+
+.cart-row-td:last-child {
+    text-align: center;
+    min-width: 115px;
+    max-width: 150px;
+    /* Минимальная ширина для колонки Цена */
+}
+
+.qty-value {
+    min-width: 40px;
+}
+
+.qty-box {
+    min-width: 100px;
+}

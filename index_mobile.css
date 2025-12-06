@@ -1,0 +1,146 @@
+@media (orientation: portrait) {
+
+    html,
+    body {
+        font-size: 1.11rem;
+    }
+
+    .main-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 6px;
+        flex-wrap: wrap;
+        font-size: 5rem;
+        min-height: 120px;
+    }
+
+    .main-nav {
+        gap: 8px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .logo {
+        font-weight: 700;
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+        color: #b6b197;
+    }
+
+    .user-avatar {
+        width: 4rem;
+        height: 4rem;
+        background: #ceccb3;
+        border-radius: 50%;
+    }
+
+    .main-banner {
+        flex-direction: column;
+        padding: 10px;
+        margin: 8px auto;
+        min-height: unset;
+        max-width: 99vw;
+        gap: 10px;
+        align-items: center;
+        width: 99vw;
+        box-sizing: border-box;
+    }
+
+    .banner-content h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .glass-btn {
+        font-size: 2rem;
+        padding: 18px 40px;
+    }
+
+    .about-centered p {
+        font-size: 2rem;
+        line-height: 1.52;
+        margin-bottom: 24px;
+    }
+
+    .about-centered h2 {
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+    }
+
+    .stats-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .glass-card {
+        width: 98vw;
+        max-width: 400px;
+        margin: 0 auto 10px auto;
+        padding: 18px 8vw;
+        font-size: 1.3rem;
+    }
+
+    .card-title {
+        font-size: 2rem;
+    }
+
+    .card-desc {
+        font-size: 2rem;
+    }
+
+    .main-footer {
+        font-size: 2rem;
+        padding: 8px 0 5px 0;
+    }
+}
+
+
+@media (max-width: 900px),
+(orientation: portrait) {
+    .main-header {
+        flex-wrap: wrap;
+        padding: 9px 10px 7px 8px;
+    }
+
+    .main-nav {
+        position: fixed;
+        right: 0;
+        top: 0;
+        background: #f1e7d0fd;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0;
+        padding: 70px 0 14px 0;
+        min-width: 65vw;
+        max-width: 90vw;
+        box-shadow: -2px 0 22px 0 #b1ae9950;
+        transform: translateX(100%);
+        transition: transform 0.26s;
+        height: 100vh;
+        z-index: 99;
+    }
+
+    .main-nav.open {
+        transform: translateX(0);
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 21px 32px 21px 18px;
+        font-size: 1.25rem;
+        border-radius: 0;
+        border-bottom: 1px solid #e2dbbe;
+        color: #56543C;
+    }
+
+    .user-avatar,
+    .burger-menu {
+        order: 2;
+    }
+
+    .burger-menu {
+        display: flex !important;
+    }
+}

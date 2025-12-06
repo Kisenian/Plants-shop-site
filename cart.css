@@ -1,0 +1,390 @@
+/* ===================================================================
+   Базовые стили для страницы корзины, схожие с каталогом
+=================================================================== */
+body {
+    background: #e8dbc8;
+    color: #56543C;
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+
+/* -------------------------------------------
+   Центрирование и оформление заголовка
+------------------------------------------- */
+.page-title-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 34px;
+}
+
+.page-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: #56543C;
+    font-family: 'Georgia', serif;
+    margin: 0;
+}
+
+/* -------------------------------------------
+   Общие стили для ссылок и кнопок (по желанию)
+------------------------------------------- */
+a,
+a:visited {
+    color: #56543C;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #8a9b73;
+}
+
+/* Можно добавить: размер базового текста и сглаживание */
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+/* ===================================================================
+   Стили для блока корзины и элементов заказа
+=================================================================== */
+#cart-block {
+    position: fixed;
+    top: 30px;
+    right: 80px;
+    background: #e8dbc8;
+    border-radius: 16px;
+    padding: 30px 38px 38px 38px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    min-width: 420px;
+    min-height: 340px;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-close {
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.cart-list {
+    margin: 22px 0;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.cart-table-block {
+    flex: 1 1 0%;
+    min-width: 465px;
+    border: 2px solid #56543C;
+    border-radius: 12px;
+    padding: 24px 20px;
+    overflow: hidden;
+    margin-left: 10%;
+}
+
+.cart-table thead tr {
+    border-bottom: 1.5px solid #56543C;
+}
+
+.cart-table th {
+    text-align: left;
+    padding: 12px 8px;
+    border-bottom: none;
+    font-weight: bold;
+}
+
+.cart-table td {
+    padding: 2px 8px;
+}
+
+.cart-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    border-bottom: 1.5px solid #1e1515;
+    padding-bottom: 11px;
+}
+
+.cart-thumb img {
+    width: 100px;
+    height: 100px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
+.cart-name {
+    flex: 1;
+}
+
+.cart-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.cart-controls button {
+    border: 1px solid #56543C;
+    background: #e8dbc8;
+    color: #56543C;
+    border-radius: 7px;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.cart-trash {
+    background: none;
+    border: none;
+    font-size: 1.24rem;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.cart-summary {
+    border-top: 1px solid #b1ad9b;
+    padding-top: 18px;
+}
+
+.cart-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 36px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.cart-left {
+    flex: 1 1 0%;
+    min-width: 350px;
+}
+
+.cart-summary-block {
+    flex: 0 0 350px;
+    min-width: 300px;
+    margin-right: 10%;
+}
+
+.cart-left,
+.cart-summary-block {
+    border: 2px solid #56543C;
+    border-radius: 12px;
+    padding: 24px 20px;
+}
+
+input[type="text"] {
+    border: 1px solid #56543C;
+    background: #e8dbc8;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 1rem;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Совместная итоговая версия для cart-pay-btn */
+.cart-pay-btn {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #50604f 0%, #8fb873 100%);
+    color: #fff;
+    font-size: 1.22rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    opacity: 0.6;
+    box-shadow: 0 2px 12px rgba(80, 96, 79, 0.07);
+    letter-spacing: 0.05em;
+    margin-top: 18px;
+    transition: opacity .2s, box-shadow .2s, background .2s;
+    display: block;
+}
+
+.cart-pay-btn.active {
+    opacity: 1;
+}
+
+.cart-pay-btn:not(:disabled):hover {
+    opacity: 1;
+    background: linear-gradient(90deg, #404c3a 0%, #7fa85b 100%);
+    box-shadow: 0 4px 18px rgba(80, 96, 79, 0.16);
+}
+
+.cart-pay-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.back-to-catalog-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    color: #656044;
+    background: transparent;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s, text-decoration 0.2s, transform 0.17s;
+    box-shadow: none;
+    z-index: 100;
+    margin-right: 6%;
+    font-weight: 600;
+    border: none;
+}
+
+.back-to-catalog-btn:hover,
+.back-to-catalog-btn:focus {
+    text-decoration: underline;
+    color: #56543C;
+    background: transparent;
+    transform: translateX(-8px);
+}
+
+.qty-box {
+    display: flex;
+    align-items: center;
+    background: #656044;
+    border-radius: 12px;
+    box-shadow: 0 1px 5px rgba(80, 96, 79, 0.06);
+    padding: 4px 8px;
+    gap: 7px;
+    min-width: 100px;
+    justify-content: center;
+    max-width: 80px;
+}
+
+.qty-value {
+    min-width: 40px;
+    max-width: 18px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #ceccb3;
+    background: none;
+    border: none;
+    pointer-events: none;
+    justify-content: center;
+    align-content: center;
+}
+
+.qty-btn {
+    border: none;
+    background: #656044;
+    color: #fff;
+    border-radius: 9px;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(80, 96, 79, 0.07);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    outline: none;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+    user-select: none;
+}
+
+.qty-btn:active {
+    background: #56543C;
+    transform: scale(0.97);
+}
+
+.qty-btn:hover {
+    background: #50604f;
+}
+
+.del-btn {
+    background: #a94343;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    color: #fff;
+    font-size: 1.2rem;
+    margin-left: 6px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.1s;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(169, 67, 67, 0.10);
+}
+
+.del-btn:hover {
+    background: #bc2c2c;
+}
+
+.custom-checkbox {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    gap: 8px;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.custom-checkbox span {
+    width: 15px;
+    height: 12px;
+    background: #fff;
+    border: 2px solid #56543C;
+    border-radius: 8px;
+    display: inline-block;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
+}
+
+.custom-checkbox input[type="checkbox"]:checked+span {
+    background: #50604f;
+    border-color: #50604f;
+}
+
+.cart-table th:nth-child(2),
+.cart-table td:nth-child(2) {
+    min-width: 120px;
+}
+
+.cart-row-td:last-child {
+    text-align: center;
+    min-width: 115px;
+    max-width: 150px;
+}
