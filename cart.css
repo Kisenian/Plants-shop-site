@@ -52,7 +52,9 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
-
+.cart-layout {
+    margin-bottom: 5%;
+}
 
 /* ===================================================================
    Стили для блока корзины и элементов заказа
@@ -387,4 +389,8 @@ input[type="checkbox"] {
     text-align: center;
     min-width: 115px;
     max-width: 150px;
+}
+
+.promo-input {
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }

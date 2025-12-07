@@ -10,11 +10,15 @@
 /* --- добавь media-запрос: --- */
 @media (max-width: 970px),
 (orientation: portrait) {
+
+    html,
+    body {
+        font-size: 16px;
+    }
+
     body {
         min-width: 580px;
-        /* Минимальная ширина окна */
         overflow-x: auto;
-        /* Добавляем горизонтальный скролл если меньше */
     }
 
     .cart-layout {
@@ -34,7 +38,6 @@
         box-sizing: border-box;
     }
 
-    /* Сделай кнопки попроще и крупнее: */
     .cart-pay-btn {
         width: 100%;
         font-size: 1.1rem;
@@ -51,38 +54,23 @@
     .cart-summary-block {
         padding: 0 5% 0 5%;
     }
-}
 
-
-@media (orientation: portrait) {
-    .page-title {
-        font-size: 80px;
-    }
-
-    .item-name {
-        font-size: 40px;
-    }
-
-    .qty-btn {
-        font-size: 40px;
+    .back-to-catalog-btn {
+        position: static;
+        display: block;
+        margin-bottom: 2%;
+        margin-right: 5%;
+        text-align: end;
     }
 }
-
-
 
 
 /* ===== ПОРТРЕТНАЯ ОРИЕНТАЦИЯ - УВЕЛИЧЕНИЕ ===== */
-@media (orientation: portrait) {
+@media (max-device-width: 700px) and (orientation: portrait) {
 
-    /* Увеличиваем базовый размер */
-    html {
-        font-size: 30px;
-        /* Вместо 16px */
-    }
-
-    /* Общее увеличение текста */
+    html,
     body {
-        font-size: 1.1rem;
+        font-size: 1.11rem;
     }
 
     /* Вертикальное расположение блоков */
@@ -92,53 +80,57 @@
 
     /* Увеличение текста в таблице */
     .cart-table {
-        font-size: 1.1rem;
+        font-size: 4rem;
     }
 
     .cart-table th,
     .cart-table td {
-        font-size: 1.1rem;
+        font-size: 2rem;
         padding: 1rem 0.75rem;
     }
 
     /* Увеличение кнопок */
     .qty-btn,
     .del-btn {
-        font-size: 1.2rem;
+        font-size: 2rem;
     }
 
     .price-box {
-        font-size: 1.2rem;
+        font-size: 2rem;
     }
 
     /* Увеличение промокода и чекбокса */
     #promo-input {
-        font-size: 1.1rem;
+        font-size: 2rem;
         height: 3rem;
     }
 
     .custom-checkbox {
-        font-size: 1.1rem;
+        font-size: 2rem;
     }
 
     /* Увеличение кнопки оплаты */
     .cart-pay-btn {
-        font-size: 1.2rem;
-        height: 3.5rem;
+        font-size: 2rem;
+        height: 4rem;
     }
 
     /* Увеличение заголовков */
     .page-title {
-        font-size: 2.2rem;
+        font-size: 4rem;
     }
 
     .summary-card h2 {
-        font-size: 1.8rem;
+        font-size: 3rem;
+    }
+
+    .summary-card-names {
+        font-size: 2rem;
     }
 
     /* Увеличение кнопки "Назад к каталогу" */
     .back-to-catalog-btn {
-        font-size: 1.1rem;
+        font-size: 2rem;
         padding: 1rem 2rem;
     }
 
@@ -152,9 +144,21 @@
         margin-bottom: 20px;
     }
 
+    .back-to-catalog-btn {
+        position: static;
+        display: block;
+        margin-bottom: 2%;
+        margin-right: 5%;
+        text-align: end;
+    }
+
+    .qty-value {
+        font-size: 1.4rem;
+    }
+
     .custom-checkbox span {
-        width: 34px;
-        height: 30px;
+        width: 2rem;
+        height: 1.5rem;
         border-radius: 45%;
     }
 }

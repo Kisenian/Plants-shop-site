@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="burger.css">
     <link rel="stylesheet" href="delivery.css">
-    <link rel="stylesheet" href="burger_monile.css">
+    <link rel="stylesheet" href="burger_mobile.css">
     <link rel="stylesheet" href="delivery_mobile.css">
 </head>
 
@@ -27,13 +27,16 @@
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="catalog.html">Каталог</a></li>
                     <li><a href="cart.html">Корзина</a></li>
-                    <li><a href="index.html #about-section" class="menu-about">О нас</a></li>
-                    <li><a href="index.html#main-footer" class="menu-contacts">Контакты</a></li>
+                    <li><a href="delivery.html" class="current">Доставка</a></li>
+                    <li><a href="#" class="menu-about">О нас</a></li>
+                    <li><a href="#" class="menu-contacts">Контакты</a></li>
                 </ul>
             </nav>
         </div>
 
-        <h1 class="delivery-title">Выбор доставки</h1>
+        <div class="page-title-wrapper">
+            <h1 class="page-title">Доставка</h1>
+        </div>
 
         <div class="delivery-layout">
             <!-- Левое окошко с картой -->
@@ -142,15 +145,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Иконка корзины внизу -->
-        <a id="cart-btn" href="cart.html">
-            <span id="cart-count">0</span>
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="11" stroke="#56543C" stroke-width="2" />
-                <path d="M8 11H16L15 17H9L8 11Z" stroke="#56543C" stroke-width="2" />
-            </svg>
-        </a>
     </div>
 
     <script src="burger.js"></script>

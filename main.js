@@ -1,21 +1,21 @@
 // main.js
 const goods = [
-  { id: 1, name: 'Мяумяуни', price: 450, img: 'https://img.icons8.com/color/240/000000/potted-plant.png' },
-  { id: 2, name: 'Фикус', price: 530, img: 'https://img.icons8.com/color/240/000000/plant-under-sun.png' },
-  { id: 3, name: 'Роза', price: 660, img: 'https://img.icons8.com/color/240/000000/red-rose.png' },
-  { id: 4, name: 'Сансевиерия', price: 520, img: 'https://img.icons8.com/color/240/000000/potted-plant--v2.png' },
-  { id: 5, name: 'Орхидея', price: 940, img: 'https://img.icons8.com/color/240/000000/orchid.png' },
-  { id: 6, name: 'Лаванда', price: 760, img: 'https://img.icons8.com/color/240/000000/lavender.png' }
+  { id: 1, name: 'Тюльпан', price: 450, img: 'tulpan.png' },
+  { id: 2, name: 'Фикус', price: 530, img: 'fikus.png' },
+  { id: 3, name: 'Роза', price: 660, img: 'rose.png' },
+  { id: 4, name: 'Сансевиерия', price: 520, img: 'sansevieria.png' },
+  { id: 5, name: 'Орхидея', price: 940, img: 'orhidea.png' },
+  { id: 6, name: 'Фиалка', price: 760, img: 'fialca.png' }
 ];
 
-// Динамически определяем сколько карточек показывать
 function getSlidesToShow() {
-    // В портретной ориентации показываем 1 карточку
-    if (window.matchMedia("(orientation: portrait)").matches) {
-        return 1;
+    if (window.matchMedia("(min-width: 920px) and (orientation: landscape)").matches) {
+        return 3;
+  }
+    else if (window.matchMedia("(min-width: 730px) and (orientation: landscape)").matches) {
+        return 2;
     }
-    // В ландшафтной показываем 3 (или другое значение)
-    return 3;
+    return 1;
 }
 
 let start = 0;
@@ -52,7 +52,7 @@ function renderCards() {
   const cards = document.getElementById('cards');
   cards.innerHTML = '';
   
-  const SLIDE = getSlidesToShow(); // Определяем сколько показывать
+  const SLIDE = getSlidesToShow();
   let onScreen = goods.slice(start, start + SLIDE);
   
   onScreen.forEach(item => {
@@ -79,9 +79,8 @@ function renderCards() {
   document.getElementById('next').disabled = (start + SLIDE >= goods.length);
 }
 
-// Функция для перерисовки при изменении ориентации
 function handleOrientationChange() {
-    start = 0; // Сбрасываем на первую карточку
+    start = 0;
     renderCards();
 }
 
@@ -102,7 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
     renderCards();
   }
   
-  // Слушаем изменение ориентации экрана
   window.addEventListener('orientationchange', handleOrientationChange);
   window.addEventListener('resize', handleOrientationChange);
 });

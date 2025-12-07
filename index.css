@@ -25,7 +25,7 @@ body {
     font-weight: 700;
     font-size: 1.3rem;
     letter-spacing: 2px;
-    color: #b6b197;
+    color: #56543C;
 }
 
 .main-nav {
@@ -58,12 +58,6 @@ body {
     border-radius: 50%;
 }
 
-
-
-
-
-
-
 .main-banner {
     background: linear-gradient(158deg, #525a3a 50%, #3a3e22 95%);
     border-radius: 8px;
@@ -86,17 +80,6 @@ body {
 .banner-content {
     flex: 1;
 }
-
-.banner-plant img {
-    width: 170px;
-    min-width: 120px;
-    max-width: 100%;
-    border-radius: 15px;
-    /* по вкусу */
-}
-
-
-
 
 .glass-btn {
     display: inline-block;
@@ -157,12 +140,12 @@ body {
     }
 }
 
-/* Статистика карточки */
 .stats-cards {
     display: flex;
     gap: 26px;
     margin-top: 26px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .glass-card {
@@ -195,7 +178,6 @@ body {
     opacity: .83;
 }
 
-/* Футер */
 .main-footer {
     background: #f1e7d0;
     padding: 26px 0 12px 0;
@@ -255,8 +237,6 @@ body {
 }
 
 
-
-
 @media (max-width: 900px) {
     .main-header {
         flex-direction: column;
@@ -273,12 +253,10 @@ body {
         flex-direction: column;
         padding: 16px;
         margin: 12px auto;
-        /* Это центрирует баннер */
         min-height: unset;
         max-width: 600px;
         gap: 12px;
         align-items: center;
-        /* Добавьте это — выровняет внутреннее содержимое по центру */
     }
 
     .banner-plant img {

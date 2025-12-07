@@ -6,18 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
     loginForm.addEventListener('submit', function(e) {
         e.preventDefault();
         if (userInput.value.trim() && pwInput.value.trim()) {
-            // Можно тут поставить флаг успешного входа, если хочешь
-            // localStorage.setItem('isLoggedIn', 'true');
-            window.location.href = "index.html"; // заменяй на своё имя главной страницы
+            window.location.href = "index.html";
         } else {
-            // Покажем "мигающую" подсветку, либо alert:
             userInput.classList.add('login-error');
             pwInput.classList.add('login-error');
             setTimeout(() => {
                 userInput.classList.remove('login-error');
                 pwInput.classList.remove('login-error');
             }, 1000);
-            // или alert('Введите имя и пароль!');
         }
     });
 });

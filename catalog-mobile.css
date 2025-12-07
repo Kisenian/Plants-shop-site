@@ -1,20 +1,27 @@
 /* ===== КАТАЛОГ В ПОРТРЕТНОЙ ОРИЕНТАЦИИ ===== */
-@media (orientation: portrait) {
+@media (max-device-width: 700px) and (orientation: portrait) {
 
-    /* Увеличиваем базовый размер */
-    html {
-        font-size: 30px;
-    }
-
-    /* Общее увеличение текста */
+    html,
     body {
-        font-size: 1.1rem;
+        font-size: 1.11rem;
     }
 
-    /* Заголовок каталога */
+    .page-title-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: 34px;
+    }
+
     .page-title {
-        font-size: 2.2rem;
-        margin: 2rem 0;
+        font-size: 4rem;
+        font-weight: 700;
+        text-align: center;
+        color: #56543C;
+        font-family: 'Georgia', serif;
+        margin: 0;
     }
 
     /* Контейнер каталога */
@@ -37,20 +44,19 @@
     .card {
         width: 90%;
         max-width: 350px;
-        height: 450px;
+        height: 20rem;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         padding: 1.5rem;
     }
 
     /* Изображение в карточке */
     .card img {
-        max-width: 80%;
-        max-height: 220px;
-        margin: 1rem 0;
+        min-width: 400px;
+        min-height: 400px;
     }
 
     /* Футер карточки */
@@ -66,7 +72,7 @@
 
     /* Название растения */
     .card-footer h2 {
-        font-size: 1.5rem;
+        font-size: 3rem;
         text-align: center;
         width: 100%;
         margin: 0;
@@ -79,8 +85,8 @@
         bottom: auto !important;
         width: 100%;
         max-width: 350px;
-        padding: 1rem 1rem;
-        font-size: 1.2rem;
+        padding: 1.3rem 1.3rem;
+        font-size: 2.5rem;
         border-radius: 1.5rem;
         border: 3px solid #e8dbc8;
         margin: 0 auto;
@@ -89,14 +95,12 @@
 
     /* Стрелки переключения - УВЕЛИЧИВАЕМ */
     .arrow {
-        font-size: 2.5rem;
+        font-size: 5rem;
         width: 3.5rem;
         height: 3.5rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #56543C;
-        color: #fff;
         border-radius: 50%;
         border: none;
         opacity: 0.8;
@@ -116,8 +120,8 @@
         position: fixed;
         bottom: 2rem;
         right: 2rem;
-        width: 4.5rem;
-        height: 4.5rem;
+        width: 7rem;
+        height: 7rem;
         border-radius: 1.5rem;
         z-index: 1500;
         display: flex;
@@ -125,22 +129,21 @@
         justify-content: center;
         box-sizing: border-box;
         padding: 0;
-        margin: 0;
+        margin-bottom: 10%;
     }
 
     #cart-btn svg {
-        width: 2.8rem;
-        height: 2.8rem;
+        width: 6rem;
+        height: 6rem;
     }
 
     #cart-count {
         position: absolute;
-        top: 0.15rem;
-        /* регулируйте для идеального вида */
-        right: 0.15rem;
-        min-width: 2.1rem;
-        min-height: 2.1rem;
-        font-size: 1rem;
+        top: -1rem;
+        right: -1rem;
+        min-width: 4rem;
+        min-height: 4rem;
+        font-size: 2.2rem;
         display: flex;
         align-items: center;
         justify-content: center;

@@ -1,6 +1,5 @@
-// delivery.js
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Данные для адресов доставки
     const deliveryData = {
         '1': { address: 'ул. Тверская, д. 10', cost: '250 ₽', time: '1.5 часа' },
         '2': { address: 'ул. Арбат, д. 25', cost: '300 ₽', time: '2 часа' },
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
         '5': { address: 'Ленинский проспект, д. 45', cost: '400 ₽', time: '3 часа' }
     };
 
-    // Элементы DOM
     const addressSelect = document.getElementById('address-select');
     const deliveryCost = document.getElementById('delivery-cost');
     const deliveryEta = document.getElementById('delivery-eta');
@@ -18,27 +16,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const mapInfo = document.querySelector('.map-info');
     const deliveryPoints = document.querySelectorAll('.delivery-point');
 
-    // Выбор адреса
     function selectAddress(addressId) {
         const data = deliveryData[addressId];
         if (!data) return;
 
-        // Устанавливаем значения
         addressSelect.value = addressId;
         deliveryCost.textContent = data.cost;
         deliveryEta.textContent = data.time;
 
-        // Выделяем точку
         selectPoint(addressId);
 
-        // Обновляем информацию
         updateMapInfo(data);
         updateConfirmButton();  
     }
 
     
 
-    // Выделение точки на карте
     function selectPoint(pointId) {
         deliveryPoints.forEach(point => {
             point.classList.remove('selected');
@@ -50,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Обновление информации под картой
     function updateMapInfo(data) {
         if (mapInfo) {
             mapInfo.innerHTML = `
@@ -62,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Сброс информации
     function resetMapInfo() {
         if (mapInfo) {
             mapInfo.innerHTML = `
@@ -74,20 +65,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Обновление кнопки
     function updateConfirmButton() {
         const hasAddress = addressSelect.value || streetInput.value.trim();
         confirmBtn.disabled = !hasAddress;
     }
 
-    // Обработка кликов по точкам
     deliveryPoints.forEach(point => {
         point.addEventListener('click', function() {
             selectAddress(this.getAttribute('data-id'));
         });
     });
 
-    // Обработка выбора в списке
     addressSelect.addEventListener('change', function() {
         if (this.value) {
             selectAddress(this.value);
@@ -98,7 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Обработка ввода адреса
     streetInput.addEventListener('input', function() {
         if (this.value.trim()) {
             deliveryPoints.forEach(point => point.classList.remove('selected'));
@@ -110,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function() {
         updateConfirmButton();
     });
 
-    // Подтверждение доставки
     confirmBtn.addEventListener('click', function() {
         const street = streetInput.value.trim();
         const apartment = document.getElementById('apartment').value;
@@ -127,8 +113,6 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Пожалуйста, выберите или введите адрес доставки');
             return;
         }
-
-        // Сохраняем данные
         const deliveryInfo = {
             address: selectedAddress,
             apartment: apartment,

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="cart_mobile.css">
     <link rel="stylesheet" href="burger.css">
     <link rel="stylesheet" href="burger_mobile.css">
+    <link rel="stylesheet" href="cart_btn_mobile.css">
 </head>
 
 <body>
@@ -24,8 +25,9 @@
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="catalog.html">Каталог</a></li>
                 <li><a href="cart.html">Корзина</a></li>
-                <li><a href="index.html #about-section" class="menu-about">О нас</a></li>
-                <li><a href="index.html #main-footer" class="menu-contacts">Контакты</a></li>
+                <li><a href="delivery.html" class="current">Доставка</a></li>
+                <li><a href="#" class="menu-about">О нас</a></li>
+                <li><a href="#" class="menu-contacts">Контакты</a></li>
             </ul>
         </nav>
     </div>
@@ -33,6 +35,7 @@
     <div class="page-title-wrapper">
         <h1 class="page-title">Корзина</h1>
     </div>
+
     <div id="cart-page">
         <div class="cart-layout">
             <div class="cart-table-block">
@@ -45,21 +48,24 @@
                         </tr>
                     </thead>
                     <tbody id="cart-table-body">
-                        <!-- Динамически -->
+
                     </tbody>
                 </table>
             </div>
             <div class="cart-summary-block">
                 <div class="summary-card">
                     <h2>Итоговая сумма</h2>
-                    <input type="text" id="promo-input" placeholder="Промокод">
+                    <input type="text" id="promo-input" class="promo-input" placeholder="Промокод">
                     <div style="margin:7px 0;"></div>
-                    <div style="font-weight:bold;">Сумма товаров:<span class="summary-right" id="summary-sum">0</span>
+                    <div class="summary-card-names" style="font-weight:bold;">Сумма товаров:<span class="summary-right"
+                            id="summary-sum">0</span>
                     </div>
-                    <div>Скидка:<span class="summary-right" id="summary-discount">0</span></div>
-                    <div>Доставка:<span class="summary-right" id="summary-delivery">0</span></div>
-                    <div style="margin:10px 0;"><strong>Всего:</strong><span class="summary-right"
-                            id="summary-total">0</span></div>
+                    <div class="summary-card-names">Скидка:<span class="summary-right" id="summary-discount">0</span>
+                    </div>
+                    <div class="summary-card-names">Доставка:<span class="summary-right" id="summary-delivery">0</span>
+                    </div>
+                    <div style="margin:10px 0;" class="summary-card-names"><strong>Всего:</strong><span
+                            class="summary-right" id="summary-total">0</span></div>
                     <div style="margin: 13px 0 9px 0;">
                         <label class="custom-checkbox">
                             <input type="checkbox" id="agreement">
@@ -68,11 +74,10 @@
                         </label>
                     </div>
                     <button id="pay-btn" class="cart-pay-btn" disabled>К оплате</button>
-
                 </div>
             </div>
         </div>
-        <a href="index.html" class="back-to-catalog-btn">← Назад к каталогу</a>
+        <a href="catalog.html" class="back-to-catalog-btn">← Назад к каталогу</a>
     </div>
     <script src="cart.js"></script>
     <script src="burger.js"></script>

@@ -1,4 +1,4 @@
-@media (orientation: portrait) {
+@media (max-device-width: 700px) and (orientation: portrait) {
 
     html,
     body {

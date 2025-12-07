@@ -1,11 +1,10 @@
-// cart.js
 const goods = [
-  { id: 1, name: 'Сирень', price: 450, img: 'https://img.icons8.com/color/240/000000/potted-plant.png' },
-  { id: 2, name: 'Фикус', price: 530, img: 'https://img.icons8.com/color/240/000000/plant-under-sun.png' },
-  { id: 3, name: 'Роза', price: 660, img: 'https://img.icons8.com/color/240/000000/red-rose.png' },
-  { id: 4, name: 'Сансевиерия', price: 520, img: 'https://img.icons8.com/color/240/000000/potted-plant--v2.png' },
-  { id: 5, name: 'Орхидея', price: 940, img: 'https://img.icons8.com/color/240/000000/orchid.png' },
-  { id: 6, name: 'Лаванда', price: 760, img: 'https://img.icons8.com/color/240/000000/lavender.png' }
+  { id: 1, name: 'Тюльпан', price: 450, img: 'tulpan.png' },
+  { id: 2, name: 'Фикус', price: 530, img: 'fikus.png' },
+  { id: 3, name: 'Роза', price: 660, img: 'rose.png' },
+  { id: 4, name: 'Сансевиерия', price: 520, img: 'sansevieria.png' },
+  { id: 5, name: 'Орхидея', price: 940, img: 'orhidea.png' },
+  { id: 6, name: 'Фиалка', price: 760, img: 'fialca.png' }
 ]
 
 let cart = [];
@@ -73,7 +72,6 @@ function renderCart() {
     tbody.appendChild(tr);
   });
 
-  // Добавляем обработчики после создания всех элементов
   document.querySelectorAll('.minus').forEach(btn => {
     btn.onclick = (e) => {
       const itemId = parseInt(e.target.getAttribute('data-id'));
@@ -100,7 +98,7 @@ function refreshSummary() {
   loadCart();
   let sum = cart.reduce((s, i) => s + i.qty * i.price, 0);
   let promo = document.getElementById('promo-input').value.trim();
-  let discount = (promo === 'промо') ? Math.round(sum * 0.2) : 0;
+  let discount = (promo === 'промо' || promo === 'мирэа') ? Math.round(sum * 0.2) : 0;
   
   let deliveryInfo = JSON.parse(localStorage.getItem('deliveryInfo') || '{}');
   let deliveryRaw = deliveryInfo.cost || "0 ₽";
@@ -115,7 +113,6 @@ function refreshSummary() {
 }
 
 
-// Инициализация
 document.getElementById('promo-input').oninput = refreshSummary;
 document.getElementById('agreement').onchange = function() {
   let btn = document.getElementById('pay-btn');
