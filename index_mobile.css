@@ -25,7 +25,6 @@
         font-weight: 700;
         font-size: 2.5rem;
         letter-spacing: 2px;
-        color: #b6b197;
     }
 
     .user-avatar {
@@ -48,13 +47,14 @@
     }
 
     .banner-content h1 {
-        font-size: 2rem;
-        margin-bottom: 10px;
+        font-size: 2.4rem;
+        margin-bottom: 2rem;
     }
 
     .glass-btn {
         font-size: 2rem;
         padding: 18px 40px;
+        margin-bottom: 2rem;
     }
 
     .about-centered p {
@@ -83,7 +83,7 @@
     }
 
     .card-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .card-desc {
@@ -142,5 +142,10 @@
 
     .burger-menu {
         display: flex !important;
+    }
+
+    .footer-copy {
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
 }

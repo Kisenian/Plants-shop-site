@@ -4,10 +4,8 @@
     gap: 36px;
     align-items: flex-start;
     justify-content: center;
-    /* ... */
 }
 
-/* --- добавь media-запрос: --- */
 @media (max-width: 970px),
 (orientation: portrait) {
 
@@ -65,7 +63,6 @@
 }
 
 
-/* ===== ПОРТРЕТНАЯ ОРИЕНТАЦИЯ - УВЕЛИЧЕНИЕ ===== */
 @media (max-device-width: 700px) and (orientation: portrait) {
 
     html,
@@ -73,12 +70,10 @@
         font-size: 1.11rem;
     }
 
-    /* Вертикальное расположение блоков */
     .cart-layout {
         flex-direction: column;
     }
 
-    /* Увеличение текста в таблице */
     .cart-table {
         font-size: 4rem;
     }
@@ -89,7 +84,6 @@
         padding: 1rem 0.75rem;
     }
 
-    /* Увеличение кнопок */
     .qty-btn,
     .del-btn {
         font-size: 2rem;
@@ -99,7 +93,6 @@
         font-size: 2rem;
     }
 
-    /* Увеличение промокода и чекбокса */
     #promo-input {
         font-size: 2rem;
         height: 3rem;
@@ -109,13 +102,11 @@
         font-size: 2rem;
     }
 
-    /* Увеличение кнопки оплаты */
     .cart-pay-btn {
         font-size: 2rem;
         height: 4rem;
     }
 
-    /* Увеличение заголовков */
     .page-title {
         font-size: 4rem;
     }
@@ -128,7 +119,6 @@
         font-size: 2rem;
     }
 
-    /* Увеличение кнопки "Назад к каталогу" */
     .back-to-catalog-btn {
         font-size: 2rem;
         padding: 1rem 2rem;
@@ -153,12 +143,16 @@
     }
 
     .qty-value {
-        font-size: 1.4rem;
+        font-size: 2rem;
     }
 
     .custom-checkbox span {
         width: 2rem;
         height: 1.5rem;
         border-radius: 45%;
+    }
+
+    .item-name {
+        font-size: 2rem;
     }
 }
