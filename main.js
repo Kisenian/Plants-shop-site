@@ -1,4 +1,3 @@
-// main.js
 const goods = [
   { id: 1, name: 'Тюльпан', price: 450, img: 'tulpan.png' },
   { id: 2, name: 'Фикус', price: 530, img: 'fikus.png' },

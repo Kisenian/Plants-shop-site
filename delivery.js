@@ -130,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1500);
     });
 
-    // Загрузка сохранённого адреса
     function loadSavedAddress() {
         const savedInfo = localStorage.getItem('deliveryInfo');
         if (savedInfo) {
@@ -155,7 +154,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Обновление счётчика корзины
     function updateCartCount() {
         const cart = JSON.parse(localStorage.getItem('cart') || '[]');
         const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
@@ -165,7 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Инициализация
     updateCartCount();
     loadSavedAddress();
     updateConfirmButton();

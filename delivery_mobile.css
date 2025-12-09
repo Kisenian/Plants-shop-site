@@ -229,7 +229,6 @@
         font-size: 2rem;
     }
 
-    /* Форма */
     .address-form {
         display: flex;
         flex-direction: column;
@@ -324,7 +323,6 @@
         cursor: not-allowed;
     }
 
-    /* Кнопка "Вернуться к корзине" */
     .back-to-cart-btn {
         display: block;
         width: fit-content;
